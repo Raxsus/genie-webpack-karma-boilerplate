@@ -1,0 +1,4 @@
+--compilers js:test/mocha/utils/webpack.mocha.compiler.js
+--require source-map-support/register
+--require ./test/mocha/spec/chai
+--require ./test/mocha/spec/sinon-chai
