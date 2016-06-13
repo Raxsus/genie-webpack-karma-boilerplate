@@ -1,8 +1,5 @@
 const wpConfig = require('./webpack.karma.config');
 
-/**
- * @private
- */
 module.exports = function setup(config) {
   config.set({
     browsers: ['PhantomJS'],
@@ -15,7 +12,7 @@ module.exports = function setup(config) {
       'mocha',
       'chai',
       'sinon',
-      'sinon-chai',
+      'sinon-chai'
     ],
 
     files: [
