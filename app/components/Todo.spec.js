@@ -51,6 +51,6 @@ describe('Completed Todo presentation component', () => {
 
     it('onClick should be called once', () => {
         component.simulate('click');
-        sinon.assert.calledOnce(callback)
+        expect(callback.calledOnce).to.equal(true);
     });
 });
