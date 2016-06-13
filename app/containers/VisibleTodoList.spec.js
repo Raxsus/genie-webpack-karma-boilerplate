@@ -28,10 +28,17 @@
 describe('tests for VisibleTodoList', () => {
     beforeEach(() => {
         store = mockStore(storeStateMock);
-        component = mount (<VisibleTodoList store={store}/>).mount ();
+    });
+
+    it('calls componentDidMount', () => {
+        sinon.spy(VisibleTodoList.prototype, 'componentDidMount');
+        component = mount(<VisibleTodoList store={store} />);
+        expect(VisibleTodoList.prototype.componentDidMount.calledOnce).to.equal(true);
     });
 
     it('renders container', () => {
-        expect(component.find('li')).to.have.length.of(2);
+        component = mount (<VisibleTodoList store={store}/>);
+        const texts = component.find('span').map(node => node.text());
+        expect(texts).to.eql(storeStateMock.todos.map(node => node.text));
     });
 });
